@@ -5,7 +5,7 @@ int main()
 {
     int i = 0;
 
-    char szData[128] = "此文件包含 main 函数。程序执行将在此处开始并结束";
+    char szData[128] = "測試 main 函数";
 
     for (int i = 0; i < 100; i++)
     {
@@ -21,17 +21,20 @@ int main()
 
         const char* pCh = "xxx 1123j另文 朝右两岸三地 f32111\n\naaaabccc";
         RDLOG_INFO(pCh);
+        RDLOG_INFO("Info------ "<<pCh << strInfo);
+        RDLOG_ERROR("Er------ "<<pCh << strInfo);
 
-        if (i == 30)
-        {
+        if (i == 10)
             RDLOG_OFF();
-        }
 
-        if (i == 80)
+        if (i == 33)
+            RDLOG_ON()
+
+        if (i == 44)
             RDLOG_REC_ERROR();
 
-        if (i == 93)
-            RDLOG_ON()
+        if (i == 64)
+            RDLOG_REC_ALL();
     }
 
     std::cout << "end log \n";

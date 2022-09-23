@@ -65,6 +65,7 @@ using namespace log4cplus::helpers;
 // 打开日志,记录所有信息
 #define RDLOG_ON()   \
 { \
+	log4cplus::initialize();	\
 	xxLog::m_logger.setLogLevel(ALL_LOG_LEVEL); \
 }
 
